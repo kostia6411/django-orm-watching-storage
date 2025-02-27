@@ -12,11 +12,11 @@ def format_duration(duration):
 
 def storage_information_view(request):
 
-    visit_all = Visit.objects.filter(leaved_at=None)
+    unfinished_visit = Visit.objects.filter(leaved_at=None)
 
     non_closed_visits = []
 
-    for visit in visit_all:
+    for visit in unfinished_visit:
 
         duration = get_duration(visit)
 
