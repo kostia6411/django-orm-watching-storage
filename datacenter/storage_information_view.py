@@ -21,9 +21,9 @@ def storage_information_view(request):
         duration = get_duration(visit)
 
         non_closed_visits.append({
-            'who_entered': f'{visit.passcard}',
-            'entered_at': f'{visit.entered_at}',
-            'duration': f'{format_duration(duration)}',
+            'who_entered': visit.passcard,
+            'entered_at': visit.entered_at,
+            'duration': format_duration(duration),
         })
 
     context = {
