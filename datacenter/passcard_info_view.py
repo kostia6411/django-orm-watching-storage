@@ -9,11 +9,11 @@ def passcard_info_view(request, passcode):
 
     passcard = get_object_or_404(Passcard, passcode=passcode)
 
-    user_visit = Visit.objects.filter(passcard=passcard)
+    passcard_visits = Visit.objects.filter(passcard=passcard)
 
     this_passcard_visits = []
 
-    for visit in user_visit:
+    for visit in passcard_visits:
 
         duration = get_duration(visit)
 

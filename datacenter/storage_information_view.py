@@ -6,8 +6,8 @@ from .models import get_duration
 def format_duration(duration):
     hour_seconds = 3600
     minute_seconds = 60
-    hour_duration_remains = duration.seconds / hour_seconds
-    hour_duration = duration.seconds // hour_seconds
+    hour_duration_remains = duration.total_seconds() / hour_seconds
+    hour_duration = int(duration.total_seconds() // hour_seconds)
     minute_duration = int(minute_seconds * (hour_duration_remains - hour_duration))
     return f'{hour_duration}ч {minute_duration}мин'
 
