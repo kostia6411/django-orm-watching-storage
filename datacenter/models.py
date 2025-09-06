@@ -28,7 +28,3 @@ class Visit(models.Model):
                 if self.leaved_at else 'not leaved'
             )
         )
-
-def is_visit_long(spent_time, minutes=60):
-    spent_minutes = spent_time.seconds / 60
-    return spent_minutes >= minutes
